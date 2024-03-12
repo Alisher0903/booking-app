@@ -4,7 +4,9 @@ import Cards from "./components/cards";
 import FilterMenu from "./components/filter-menu";
 import FirstSection from "./components/firstSection";
 import './styles.css';
-import image from '../../../assets/hotel-page/landing-bg.png';
+import { img1, img2, img3, img4, img5, img6 } from "../../../assets/landing-img";
+import AboutFinder from "./components/about-finder";
+import Footer from "./components/footer";
 
 const OrderLanding = () => {
   return (
@@ -27,36 +29,49 @@ const OrderLanding = () => {
         <div className="max-w-[1350px] mx-auto my-16 flex justify-start items-start flex-wrap">
           <div className="p-7 w-1/3">
             <Cards
-              image={image}
+              image={img1}
               name={'Galaxy Hotel'}
             />
           </div>
           <div className="p-7 w-1/3">
             <Cards
-              image={image}
-              name={'Galaxy Hotel'}
+              image={img2}
+              name={'BWOK RESTAURANT'}
             />
           </div>
           <div className="p-7 w-1/3">
             <Cards
-              image={image}
-              name={'Galaxy Hotel'}
+              image={img3}
+              name={'Mille colline hotel'}
             />
           </div>
           <div className="p-7 w-1/3">
             <Cards
-              image={image}
-              name={'Galaxy Hotel'}
+              image={img4}
+              name={'Indabo cafe'}
             />
           </div>
           <div className="p-7 w-1/3">
             <Cards
-              image={image}
-              name={'Galaxy Hotel'}
+              image={img5}
+              name={'Soy asian restaurant'}
+            />
+          </div>
+          <div className="p-7 w-1/3">
+            <Cards
+              image={img6}
+              name={'The hut cafe'}
             />
           </div>
         </div>
       </div>
+      <div className="max-w-[1350px] mx-auto mt-20 pb-24 border-b-2 border-gray-400">
+        <AboutFinder
+          title='About HFfinder'
+          text='This is the system that links the tourists and hospitality facilities owners. this is done in such way that people can view the nearby their location Hospitality facilitites and be able to access their services aswell as pay on the system. '
+        />
+      </div>
+      <Footer />
     </div>
   )
 }
