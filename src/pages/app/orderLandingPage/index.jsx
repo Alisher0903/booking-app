@@ -13,7 +13,11 @@ const OrderLanding = () => {
     <div className="w-full text-black landing-main">
       <div className="max-w-[1350px] mx-auto">
         <div className="w-full h-screen">
-          <FirstSection />
+          <FirstSection
+            heading={`Online Hospitality facility finder system a right place.`}
+            text='In case you want to access the near by hospitality facilities services this is the  right place for you.'
+            headingTwo='want nearby facilities on the map? click below'
+          />
         </div>
         <BookingMenu
           className='mr-4'
