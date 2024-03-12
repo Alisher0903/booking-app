@@ -5,6 +5,7 @@ import HomeRestaurant from './components/layout/homeRestaurant/homeRestaurant'
 import OrderLanding from './pages/app/orderLandingPage'
 import Login from './pages/auth/login'
 import Hotels from './pages/app/orderLandingPage/hotels'
+import Restuarant from './pages/app/orderLandingPage/restuarants'
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
       <Route path='/home' Component={HomeRestaurant} />
       <Route path='/order-landing page' Component={OrderLanding} />
       <Route path='/order-landing page/hotels' Component={Hotels} />
+      <Route path='/order-landing page/restuarant' Component={Restuarant} />
       <Route path='/loginSignUp' Component={Login}/>
     </Routes>
   )
