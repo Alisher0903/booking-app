@@ -1,9 +1,9 @@
 import BookingMenu from "./components/booking-menu";
-import Cards from "./components/cards";
 import FirstSection from "./components/firstSection";
 import './styles.css';
 import AboutFinder from "./components/about-finder";
 import Footer from "./components/footer";
+import LocationInput from "./components/location-input";
 
 const DeparutreTame = () => {
     return (
@@ -26,14 +26,7 @@ const DeparutreTame = () => {
                 />
             </div>
             <div className="w-[98%] mx-auto mt-6 border-2 border-gray-300 rounded-md">
-                <div className="max-w-[1350px] mx-auto my-16 flex justify-start items-start flex-wrap">
-                    <div className="p-7 w-1/3">
-                        <Cards
-                            image=''
-                            name={'Not Found'}
-                        />
-                    </div>
-                </div>
+                <LocationInput />
             </div>
             <div className="max-w-[1350px] mx-auto mt-20 pb-24 border-b-2 border-gray-400">
                 <AboutFinder
