@@ -9,6 +9,15 @@ import Cards from "./components/details/cards";
 const Details = () => {
   const goBack = () => window.history.back();
 
+  const data = [
+    { id: 1, img: cofeDetails, name: 'Latte(Hot)', countName: 'QTY:', btn1: '2500 RWF', btn2: 'Add to order' },
+    { id: 2, img: cofeDetails, name: 'Latte(Hot)', countName: 'QTY:', btn1: '2500 RWF', btn2: 'Add to order' },
+    { id: 3, img: cofeDetails, name: 'Latte(Hot)', countName: 'QTY:', btn1: '2500 RWF', btn2: 'Add to order' },
+    { id: 4, img: cofeDetails, name: 'Latte(Hot)', countName: 'QTY:', btn1: '2500 RWF', btn2: 'Add to order' },
+    { id: 5, img: cofeDetails, name: 'Latte(Hot)', countName: 'QTY:', btn1: '2500 RWF', btn2: 'Add to order' },
+    { id: 6, img: cofeDetails, name: 'Latte(Hot)', countName: 'QTY:', btn1: '2500 RWF', btn2: 'Add to order' },
+  ]
+
   return (
     <div className="details-main-font">
       {/* first section bg img */}
@@ -38,26 +47,17 @@ const Details = () => {
         <DetailsFilterMenu />
       </div>
       <div className="max-w-[1350px] mx-auto my-16 flex justify-start items-start flex-wrap">
-        {/* {mainData ?
-          mainData.map(item => (
-            <div className="p-7 w-1/3">
-              <Cards
-                key={item.id}
-                image={item.img}
-                name={item.name}
-              />
-            </div>
-          )) : ( */}
-            <div className="p-7 w-1/3">
-              <Cards
-                image={cofeDetails}
-                name={'Not Found'}
-                countName={'count'}
-                btn1={'btn'}
-                btn2={'btn2'}
-              />
-            </div>
-          {/* )} */}
+        {data.map(item => (
+          <div className="p-7 w-1/3">
+            <Cards
+              image={item.img}
+              name={item.name}
+              countName={item.countName}
+              btn1={item.btn1}
+              btn2={item.btn2}
+            />
+          </div>
+        ))}
       </div>
     </div>
   )
