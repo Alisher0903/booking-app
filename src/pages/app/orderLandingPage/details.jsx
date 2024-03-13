@@ -2,6 +2,8 @@ import { Link } from "react-router-dom"
 import { detailsBg } from "../../../assets/landing-img"
 import DetailsInfo from "./components/details/details-info"
 import Services from "./components/details/services";
+import './styles.css';
+import DetailsFilterMenu from "./components/details/details-filter-menu";
 
 const Details = () => {
 
@@ -10,7 +12,7 @@ const Details = () => {
   }
 
   return (
-    <>
+    <div className="details-main-font">
       {/* first section bg img */}
       <div
         className='bg-cover bg-center w-full h-[75vh] rounded-b-2xl'
@@ -34,7 +36,10 @@ const Details = () => {
       <div className="max-w-[1400px] mx-auto">
         <Services />
       </div>
-    </>
+      <div className="max-w-[1100px] mx-auto mt-16">
+        <DetailsFilterMenu />
+      </div>
+    </div>
   )
 }
 
