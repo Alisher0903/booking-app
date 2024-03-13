@@ -22,10 +22,12 @@ import cofe3 from './cafe-img/indabo-caffee 2.png';
 import cofe4 from './cafe-img/mocha-caffee 1.png';
 import cofe5 from './cafe-img/neo-coffee-shop 1.png';
 import cofe6 from './cafe-img/pishon-caffee 1.png';
+import detailsBg from './details-img/bg-main.jfif';
 
 export {
     img1, img2, img3, img4, img5, img6, // landing main image
     hotel1, hotel2, hotel3, hotel4, hotel5, hotel6, // hotel page image
     res1, res2, res3, res4, res5, res6, // restuarant page image
     cofe1, cofe2, cofe3, cofe4, cofe5, cofe6, // cofe page image
+    detailsBg // details page image
 }
