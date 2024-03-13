@@ -33,6 +33,8 @@ const Restuarant = () => {
                     leftText='Nearest facilities list'
                     rightText=''
                     button=''
+                    leftLink={null}
+                    rightLink={null}
                 />
             </div>
             <div className="w-[98%] mx-auto mt-6 border-2 border-gray-300 rounded-md">

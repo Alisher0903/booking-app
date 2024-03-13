@@ -35,6 +35,8 @@ const OrderLanding = () => {
           leftText='Nearest facilities list'
           rightText='need a taxi to destination click here'
           button={<Button name='Book car' />}
+          leftLink={null}
+          rightLink={null}
         />
       </div>
       <div className="w-[98%] mx-auto mt-6 border-2 border-gray-300 rounded-md">

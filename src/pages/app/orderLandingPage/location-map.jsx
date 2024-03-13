@@ -1,13 +1,10 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
 import {
     Map,
     Placemark,
     YMaps,
     ZoomControl,
-    FullscreenControl,
     RouteButton,
-    RouteEditor,
     SearchControl,
 } from "react-yandex-maps";
 
@@ -52,6 +49,10 @@ const LocationMap = () => {
             .then(response => response.json())
             .then(data => setAddressLoc(data.response.GeoObjectCollection.featureMember[0].GeoObject.metaDataProperty.GeocoderMetaData.text))
             .catch(() => console.error('Xatolik yuz berdi!'));
+    }
+
+    function goBack() {
+        window.history.back(); // Tarixdagi sahifaga qaytish
     }
 
     const placemarkOptions = { iconColor: isHovered ? 'red' : 'blue', preset: 'islands#circleDotIcon', };
@@ -110,13 +111,12 @@ const LocationMap = () => {
                 active:text-white hover:text-green-600 duration-200 bg-white rounded-full w-10 h-10 flex justify-center items-center'>
                 <svg xmlns="http://www.w3.org/2000/svg" className='w-8 h-8' viewBox="0 0 15 15"><path fill="currentColor" fill-rule="evenodd" d="M8 1.018V0H7v1.018a6.5 6.5 0 0 0-5.981 5.977H0v1h1.019A6.508 6.508 0 0 0 7 13.981V15h1v-1.019a6.508 6.508 0 0 0 5.981-5.986H15v-1h-1.019A6.5 6.5 0 0 0 8 1.018M8 3v3.995h4v1H8V12H7V7.995H3v-1h4V3z" clip-rule="evenodd" /></svg>
             </button>
-            <Link to='/'>
-                <button
-                    className='absolute right-[8.5rem] top-[.6rem] text-green-400 border-2 shadow-lg active:bg-green-500 
-                    active:text-white hover:text-green-600 duration-200 bg-white px-2 py-0.5 rounded-lg'>
-                    Back
-                </button>
-            </Link>
+            <button
+                onClick={goBack}
+                className='absolute right-[8.5rem] top-[.6rem] text-green-400 border-2 shadow-lg active:bg-green-500 
+                active:text-white hover:text-green-600 duration-200 bg-white px-2 py-0.5 rounded-lg'>
+                Back
+            </button>
         </div>
     )
 }
