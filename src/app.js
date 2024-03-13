@@ -7,7 +7,7 @@ import Cafe from './pages/app/orderLandingPage/cafe'
 import LocationMap from './pages/app/orderLandingPage/location-map'
 import DeparutreTame from './pages/app/orderLandingPage/departure-tame'
 import ComplateTaxiBooking from './pages/app/orderLandingPage/complate-taxi-booking'
-import Details from './pages/app/orderLandingPage/components/details'
+import Details from './pages/app/orderLandingPage/details'
 
 const App = () => {
   return (
