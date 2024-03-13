@@ -12,7 +12,7 @@ const FilterMenu = ({ activeClassAll, activeClassHotels, activeClassRestaurants,
                 <ShoppingBasket count={0} />
             </span>
             <Link
-                to='/order-landing page'
+                to='/'
                 className={`${activeClassAll} hover:text-[#F46A06] duration-200`}>
                 <p>All</p>
             </Link>
