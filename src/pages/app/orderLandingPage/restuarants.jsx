@@ -4,9 +4,20 @@ import Cards from './components/cards';
 import FilterMenu from './components/filter-menu';
 import FirstSection from './components/firstSection';
 import Footer from './components/footer';
-import { hotel1, hotel2, hotel3, hotel4, hotel5, hotel6 } from "../../../assets/landing-img";
+import { res1, res2, res3, res4, res5, res6 } from "../../../assets/landing-img";
+import { useState } from 'react';
+
+const data = [
+    { id: 1, img: res1, name: 'BWOK-Restaurant' },
+    { id: 2, img: res2, name: 'Soy-Asian Restaurant' },
+    { id: 3, img: res3, name: 'Inka-steak Restaurant' },
+    { id: 4, img: res4, name: 'Povoire-noire Restaurant' },
+    { id: 5, img: res5, name: 'Cucina Restaurant' },
+    { id: 6, img: res6, name: 'Sundowner Restaurant' },
+]
 
 const Restuarant = () => {
+    const [resData, setResData] = useState(data)
     return (
         <div className="w-full text-black landing-main">
             <div className="max-w-[1350px] mx-auto">
@@ -29,42 +40,23 @@ const Restuarant = () => {
                     <FilterMenu activeClassRestaurants='text-[#F46A06]' />
                 </div>
                 <div className="max-w-[1350px] mx-auto my-16 flex justify-start items-start flex-wrap">
-                    <div className="p-7 w-1/3">
-                        <Cards
-                            image={hotel1}
-                            name={'Galaxy Hotel'}
-                        />
-                    </div>
-                    <div className="p-7 w-1/3">
-                        <Cards
-                            image={hotel2}
-                            name={'Classic Hotel'}
-                        />
-                    </div>
-                    <div className="p-7 w-1/3">
-                        <Cards
-                            image={hotel3}
-                            name={'Mille colline hotel'}
-                        />
-                    </div>
-                    <div className="p-7 w-1/3">
-                        <Cards
-                            image={hotel4}
-                            name={'M-Hotel'}
-                        />
-                    </div>
-                    <div className="p-7 w-1/3">
-                        <Cards
-                            image={hotel5}
-                            name={'Heaven-Hotel'}
-                        />
-                    </div>
-                    <div className="p-7 w-1/3">
-                        <Cards
-                            image={hotel6}
-                            name={'Marriot-Hotel'}
-                        />
-                    </div>
+                    {resData ?
+                        resData.map(item => (
+                            <div className="p-7 w-1/3">
+                                <Cards
+                                    key={item.id}
+                                    image={item.img}
+                                    name={item.name}
+                                />
+                            </div>
+                        )) : (
+                            <div className="p-7 w-1/3">
+                                <Cards
+                                    image={res1}
+                                    name={'Restuarand not found'}
+                                />
+                            </div>
+                        )}
                 </div>
             </div>
             <div className="max-w-[1350px] mx-auto mt-20 pb-24 border-b-2 border-gray-400">

@@ -7,8 +7,19 @@ import './styles.css';
 import { img1, img2, img3, img4, img5, img6 } from "../../../assets/landing-img";
 import AboutFinder from "./components/about-finder";
 import Footer from "./components/footer";
+import { useState } from "react";
+
+const data = [
+  { id: 1, img: img1, name: 'Galaxy Hotel' },
+  { id: 2, img: img2, name: 'BWOK RESTAURANT' },
+  { id: 3, img: img3, name: 'Mille colline hotel' },
+  { id: 4, img: img4, name: 'Indabo cafe' },
+  { id: 5, img: img5, name: 'Soy asian restaurant' },
+  { id: 6, img: img6, name: 'The hut cafe' },
+]
 
 const OrderLanding = () => {
+  const [mainData, setMainData] = useState(data)
   return (
     <div className="w-full text-black landing-main">
       <div className="max-w-[1350px] mx-auto">
@@ -31,42 +42,23 @@ const OrderLanding = () => {
           <FilterMenu activeClassAll='text-[#F46A06]' />
         </div>
         <div className="max-w-[1350px] mx-auto my-16 flex justify-start items-start flex-wrap">
-          <div className="p-7 w-1/3">
-            <Cards
-              image={img1}
-              name={'Galaxy Hotel'}
-            />
-          </div>
-          <div className="p-7 w-1/3">
-            <Cards
-              image={img2}
-              name={'BWOK RESTAURANT'}
-            />
-          </div>
-          <div className="p-7 w-1/3">
-            <Cards
-              image={img3}
-              name={'Mille colline hotel'}
-            />
-          </div>
-          <div className="p-7 w-1/3">
-            <Cards
-              image={img4}
-              name={'Indabo cafe'}
-            />
-          </div>
-          <div className="p-7 w-1/3">
-            <Cards
-              image={img5}
-              name={'Soy asian restaurant'}
-            />
-          </div>
-          <div className="p-7 w-1/3">
-            <Cards
-              image={img6}
-              name={'The hut cafe'}
-            />
-          </div>
+          {mainData ?
+            mainData.map(item => (
+              <div className="p-7 w-1/3">
+                <Cards
+                  key={item.id}
+                  image={item.img}
+                  name={item.name}
+                />
+              </div>
+            )) : (
+              <div className="p-7 w-1/3">
+                <Cards
+                  image={img1}
+                  name={'Not Found'}
+                />
+              </div>
+            )}
         </div>
       </div>
       <div className="max-w-[1350px] mx-auto mt-20 pb-24 border-b-2 border-gray-400">

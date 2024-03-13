@@ -11,10 +11,26 @@ const FilterMenu = ({ activeClassAll, activeClassHotels, activeClassRestaurants,
             <span className='absolute -right-4 -top-5'>
                 <ShoppingBasket count={0} />
             </span>
-            <Link className={`${activeClassAll} hover:text-[#F46A06] duration-200`}><p>All</p></Link>
-            <Link className={`${activeClassHotels} hover:text-[#F46A06] duration-200`}><p>Hotels</p></Link>
-            <Link className={`${activeClassRestaurants} hover:text-[#F46A06] duration-200`}><p>Restaurants</p></Link>
-            <Link className={`${activeClassCoffee} hover:text-[#F46A06] duration-200`}><p>Coffee shops</p></Link>
+            <Link
+                to='/order-landing page'
+                className={`${activeClassAll} hover:text-[#F46A06] duration-200`}>
+                <p>All</p>
+            </Link>
+            <Link
+                to='/order-landing page/hotels'
+                className={`${activeClassHotels} hover:text-[#F46A06] duration-200`}>
+                <p>Hotels</p>
+            </Link>
+            <Link
+                to='/order-landing page/restuarant'
+                className={`${activeClassRestaurants} hover:text-[#F46A06] duration-200`}>
+                <p>Restaurants</p>
+            </Link>
+            <Link
+                to='/order-landing page/cafe'
+                className={`${activeClassCoffee} hover:text-[#F46A06] duration-200`}>
+                <p>Coffee shops</p>
+            </Link>
         </div>
     )
 }
