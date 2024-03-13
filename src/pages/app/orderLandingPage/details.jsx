@@ -1,15 +1,13 @@
 import { Link } from "react-router-dom"
-import { detailsBg } from "../../../assets/landing-img"
+import { detailsBg, cofeDetails } from "../../../assets/landing-img"
 import DetailsInfo from "./components/details/details-info"
 import Services from "./components/details/services";
 import './styles.css';
 import DetailsFilterMenu from "./components/details/details-filter-menu";
+import Cards from "./components/details/cards";
 
 const Details = () => {
-
-  function goBack() {
-    window.history.back(); // Tarixdagi sahifaga qaytish
-  }
+  const goBack = () => window.history.back();
 
   return (
     <div className="details-main-font">
@@ -38,6 +36,28 @@ const Details = () => {
       </div>
       <div className="max-w-[1100px] mx-auto mt-16">
         <DetailsFilterMenu />
+      </div>
+      <div className="max-w-[1350px] mx-auto my-16 flex justify-start items-start flex-wrap">
+        {/* {mainData ?
+          mainData.map(item => (
+            <div className="p-7 w-1/3">
+              <Cards
+                key={item.id}
+                image={item.img}
+                name={item.name}
+              />
+            </div>
+          )) : ( */}
+            <div className="p-7 w-1/3">
+              <Cards
+                image={cofeDetails}
+                name={'Not Found'}
+                countName={'count'}
+                btn1={'btn'}
+                btn2={'btn2'}
+              />
+            </div>
+          {/* )} */}
       </div>
     </div>
   )
