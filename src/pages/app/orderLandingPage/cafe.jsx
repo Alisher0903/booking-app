@@ -7,6 +7,11 @@ import { cofe1, cofe2, cofe3, cofe4, cofe5, cofe6 } from "../../../assets/landin
 import AboutFinder from "./components/about-finder";
 import Footer from "./components/footer";
 import { useState } from "react";
+import { FaHome } from "react-icons/fa";
+import { FaBowlFood } from "react-icons/fa6";
+import { IoCall } from "react-icons/io5";
+import { FiLogIn } from "react-icons/fi";
+import Navbar from "./navbar";
 
 const data = [
     { id: 1, img: cofe1, name: 'Camellia Coffee' },
@@ -17,11 +22,19 @@ const data = [
     { id: 6, img: cofe6, name: 'Pishon Caffee' },
 ]
 
+const navdata = [
+    {id: 1, icon: <FaHome color='black' />, name: 'Home'},
+    {id: 2, icon: <FaBowlFood color='black' />, name: 'Create facility'},
+    {id: 3, icon: <IoCall color='black' />, name: 'ContactUs'},
+    {id: 4, icon: <FiLogIn color='black' />, name: 'Login'}
+  ]
+
 const Cafe = () => {
     const [cofeData, setCofeData] = useState(data)
     return (
         <div className="w-full text-black landing-main">
-            <div className="max-w-[1350px] mx-auto">
+            <Navbar navdata={navdata} />
+            <div className="max-w-[1350px] mx-auto pt-12">
                 <div className="w-full h-screen">
                     <FirstSection
                         heading={`Online Hospitality facility finder system a right place.`}

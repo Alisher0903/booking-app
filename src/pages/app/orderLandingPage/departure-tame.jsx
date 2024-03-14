@@ -4,11 +4,24 @@ import './styles.css';
 import AboutFinder from "./components/about-finder";
 import Footer from "./components/footer";
 import LocationInput from "./components/location-input";
+import Navbar from "./navbar";
+import { FaHome } from "react-icons/fa";
+import { FaBowlFood } from "react-icons/fa6";
+import { IoCall } from "react-icons/io5";
+import { FiLogIn } from "react-icons/fi";
+
+const navdata = [
+    {id: 1, icon: <FaHome color='black' />, name: 'Home'},
+    {id: 2, icon: <FaBowlFood color='black' />, name: 'Create facility'},
+    {id: 3, icon: <IoCall color='black' />, name: 'ContactUs'},
+    {id: 4, icon: <FiLogIn color='black' />, name: 'Login'}
+  ]
 
 const DeparutreTame = () => {
     return (
         <div className="w-full text-black landing-main">
-            <div className="max-w-[1350px] mx-auto">
+            <Navbar navdata={navdata} />
+            <div className="max-w-[1350px] mx-auto pt-12">
                 <div className="w-full h-screen">
                     <FirstSection
                         heading={`Online Hospitality facility finder system a right place.`}

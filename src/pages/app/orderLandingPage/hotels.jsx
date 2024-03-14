@@ -6,6 +6,11 @@ import FirstSection from './components/firstSection';
 import Footer from './components/footer';
 import { hotel1, hotel2, hotel3, hotel4, hotel5, hotel6 } from "../../../assets/landing-img";
 import { useState } from 'react';
+import Navbar from './navbar';
+import { FaHome } from "react-icons/fa";
+import { FaBowlFood } from "react-icons/fa6";
+import { IoCall } from "react-icons/io5";
+import { FiLogIn } from "react-icons/fi";
 
 const data = [
     { id: 1, img: hotel1, name: 'Galaxy Hotel' },
@@ -16,11 +21,19 @@ const data = [
     { id: 6, img: hotel6, name: 'Marriot-Hotel' },
 ]
 
+const navdata = [
+    {id: 1, icon: <FaHome color='black' />, name: 'Home'},
+    {id: 2, icon: <FaBowlFood color='black' />, name: 'Create facility'},
+    {id: 3, icon: <IoCall color='black' />, name: 'ContactUs'},
+    {id: 4, icon: <FiLogIn color='black' />, name: 'Login'}
+  ]
+
 const Hotels = () => {
     const [hotelData, setHotelData] = useState(data)
     return (
         <div className="w-full text-black landing-main">
-            <div className="max-w-[1350px] mx-auto">
+            <Navbar navdata={navdata} />
+            <div className="max-w-[1350px] mx-auto pt-12">
                 <div className="w-full h-screen">
                     <FirstSection
                         heading={`Online Hospitality facility finder system a right place.`}

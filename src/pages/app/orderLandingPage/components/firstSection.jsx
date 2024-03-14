@@ -20,7 +20,7 @@ const FirstSection = ({heading, headingTwo, text}) => {
                 </div>
             </div>
             <div className='w-[60%] flex justify-center items-center'>
-                <div className='firstSection-img'>
+                <div className='firstSection-img w-[70%]'>
                     <img className='w-full h-full' src={img} alt="first img" />
                 </div>
             </div>
