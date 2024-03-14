@@ -34,7 +34,7 @@ const OrderLanding = () => {
           className='mr-4'
           leftText='Nearest facilities list'
           rightText='need a taxi to destination click here'
-          button={<Button name='Book car' />}
+          button={<Button link='/departure-tame' name='Book car' />}
           leftLink={null}
           rightLink={null}
         />
@@ -51,6 +51,7 @@ const OrderLanding = () => {
                   key={item.id}
                   image={item.img}
                   name={item.name}
+                  detailsLink='/details'
                 />
               </div>
             )) : (

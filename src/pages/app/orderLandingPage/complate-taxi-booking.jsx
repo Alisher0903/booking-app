@@ -21,7 +21,7 @@ const ComplateTaxiBooking = () => {
                     leftText='Book a car'
                     rightText='Back to home page'
                     button=''
-                    leftLink='/'
+                    leftLink=''
                     rightLink='/'
                 />
             </div>

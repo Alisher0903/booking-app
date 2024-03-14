@@ -49,6 +49,7 @@ const Restuarant = () => {
                                     key={item.id}
                                     image={item.img}
                                     name={item.name}
+                                    detailsLink='/details'
                                 />
                             </div>
                         )) : (

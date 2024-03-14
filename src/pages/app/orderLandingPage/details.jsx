@@ -16,6 +16,10 @@ import Cards from "./components/details/cards";
 import { useEffect, useState } from "react";
 import Gallery from "./components/details/gallery";
 import Navbar from "./navbar";
+import { FaHome } from "react-icons/fa";
+import { FaBowlFood } from "react-icons/fa6";
+import { IoCall } from "react-icons/io5";
+import { FiLogIn } from "react-icons/fi";
 
 const data = [
   { id: 1, img: cofeDetails, shoppingCount: 0, name: 'Latte(Hot)', countName: 'QTY:', btn1: '2500 RWF', btn2: 'Add to order' },
@@ -34,6 +38,13 @@ const imgData = [
   { id: 5, img: gallery5 },
 ]
 
+const navdata = [
+  {id: 1, icon: <FaHome color='black' />, name: 'Home'},
+  {id: 2, icon: <FaBowlFood color='black' />, name: 'Create facility'},
+  {id: 3, icon: <IoCall color='black' />, name: 'ContactUs'},
+  {id: 4, icon: <FiLogIn color='black' />, name: 'Login'}
+]
+
 const Details = () => {
   const [items, setItems] = useState(data)
   const [itemsCount, setItemsCount] = useState(0)
@@ -45,7 +56,7 @@ const Details = () => {
 
   return (
     <div className="details-main-font">
-      <Navbar />
+      <Navbar navdata={navdata} />
       {/* first section bg img */}
       <div
         className='bg-cover bg-center w-full h-[75vh] rounded-b-2xl'
