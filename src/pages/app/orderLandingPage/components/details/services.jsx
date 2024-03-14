@@ -1,5 +1,6 @@
 import { IoWifi } from "react-icons/io5";
 import Button from '../button';
+import HeadingTitle from "./heading-title";
 
 const Services = () => {
     let data = [
@@ -13,11 +14,7 @@ const Services = () => {
     
     return (
         <div>
-            <h1 style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.5)' }}
-                className='text-2xl font-bold tracking-wider text-black opacity-90 pb-5
-                border-b-2 border-black ps-5'>
-                Services we offer
-            </h1>
+            <HeadingTitle name='Services we offer' />
             <div className='flex justify-around items-start flex-wrap mt-16 gap-10'>
                 {data.map(item => (
                     <div className='bg-[#F1E8D7] rounded-lg p-3 w-[40%] h-36 shadow-lg shadow-gray-400'>

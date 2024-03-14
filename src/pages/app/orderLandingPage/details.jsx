@@ -6,6 +6,7 @@ import './styles.css';
 import DetailsFilterMenu from "./components/details/details-filter-menu";
 import Cards from "./components/details/cards";
 import { useEffect, useState } from "react";
+import Gallery from "./components/details/gallery";
 
 const data = [
   { id: 1, img: cofeDetails, shoppingCount: 0, name: 'Latte(Hot)', countName: 'QTY:', btn1: '2500 RWF', btn2: 'Add to order' },
@@ -63,6 +64,9 @@ const Details = () => {
             />
           </div>
         ))}
+      </div>
+      <div className="max-w-[1350px] mx-auto my-16">
+        <Gallery />
       </div>
     </div>
   )
