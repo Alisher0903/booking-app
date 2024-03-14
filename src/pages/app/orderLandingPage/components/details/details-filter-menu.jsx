@@ -2,8 +2,8 @@ import React, { useState } from "react"
 import { Link } from "react-router-dom"
 import ShoppingBasket from "../shopping-basket"
 
-const DetailsFilterMenu = () => {
-    const [active, setActive] = useState({id: 1})
+const DetailsFilterMenu = ({ itemsCount }) => {
+    const [active, setActive] = useState({ id: 1 })
 
     const data = [
         { id: 1, name: 'All' },
@@ -21,7 +21,7 @@ const DetailsFilterMenu = () => {
             flex justify-around items-center relative text-black font-bold text-[1.2rem]`}
         >
             <span className='absolute -right-4 -top-5'>
-                <ShoppingBasket count={0} />
+                <ShoppingBasket count={itemsCount} />
             </span>
             {data.map(item => (
                 <Link

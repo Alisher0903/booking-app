@@ -1,25 +1,53 @@
-const Cards = ({ image, name, countName, btn1, btn2 }) => {
+import DetailsBtn from "./detailsBtn"
+
+const Cards = ({ item, setItems }) => {
+    const incHandler = (id) => {
+        setItems(items => items.map(item => {
+            if (item.id === id) {
+                return { ...item, shoppingCount: item.shoppingCount + 1 }; // Increase the count
+            }
+            return item;
+        }));
+    }
+
+    const decHandler = (id) => {
+        setItems(items => items.map(item => {
+            if (item.id === id && item.shoppingCount > 0) {
+                return { ...item, shoppingCount: item.shoppingCount - 1 }; // Decrease the count
+            }
+            return item;
+        }));
+    }
     return (
         <div
+            key={item.id}
             className='bg-slate-50 overflow-hidden rounded-3xl shadow-md shadow-slate-400 
-            hover:shadow-lg hover:shadow-gray-500 duration-200 w-full'>
+            hover:shadow-lg hover:shadow-gray-500 duration-200 w-full hover:-mt-2'>
             <div className='w-full h-80 p-3 overflow-hidden'>
                 <img
                     className='w-full h-full object-cover rounded-md'
-                    src={image}
+                    src={item.img}
                     alt="card img" />
             </div>
-            <div className="flex justify-between items-start p-3 mt-2">
+            <div className="flex justify-between items-center p-3 mt-2">
                 <h3 className='font-bold tracking-wide text-[1.1rem]'>
-                    {name}
+                    {item.name}
                 </h3>
                 <h3 className='font-bold tracking-wide text-[1.1rem]'>
-                    {countName}
+                    {item.countName}
+                    <button
+                        className={`${item.shoppingCount <= 0 ? 'opacity-40' : ''} mx-3 font-extrabold text-[1.5rem]`}
+                        disabled={item.shoppingCount <= 0 ? true : false}
+                        onClick={() => decHandler(item.id)}>-</button>
+                    <span className="text-[1.7rem]">{item.shoppingCount}</span>
+                    <button
+                        className={`mx-3 font-extrabold text-[1.5rem]`}
+                        onClick={() => incHandler(item.id)}>+</button>
                 </h3>
             </div>
             <div className="flex justify-between items-start p-3 mt-2">
-                <button>{btn1}</button>
-                <button>{btn2}</button>
+                <DetailsBtn name={item.btn1} />
+                <DetailsBtn name={item.btn2} />
             </div>
         </div>
     )

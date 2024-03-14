@@ -5,18 +5,25 @@ import Services from "./components/details/services";
 import './styles.css';
 import DetailsFilterMenu from "./components/details/details-filter-menu";
 import Cards from "./components/details/cards";
+import { useEffect, useState } from "react";
+
+const data = [
+  { id: 1, img: cofeDetails, shoppingCount: 0, name: 'Latte(Hot)', countName: 'QTY:', btn1: '2500 RWF', btn2: 'Add to order' },
+  { id: 2, img: cofeDetails, shoppingCount: 0, name: 'Latte(Hot)', countName: 'QTY:', btn1: '2500 RWF', btn2: 'Add to order' },
+  { id: 3, img: cofeDetails, shoppingCount: 0, name: 'Latte(Hot)', countName: 'QTY:', btn1: '2500 RWF', btn2: 'Add to order' },
+  { id: 4, img: cofeDetails, shoppingCount: 0, name: 'Latte(Hot)', countName: 'QTY:', btn1: '2500 RWF', btn2: 'Add to order' },
+  { id: 5, img: cofeDetails, shoppingCount: 0, name: 'Latte(Hot)', countName: 'QTY:', btn1: '2500 RWF', btn2: 'Add to order' },
+  { id: 6, img: cofeDetails, shoppingCount: 0, name: 'Latte(Hot)', countName: 'QTY:', btn1: '2500 RWF', btn2: 'Add to order' },
+]
 
 const Details = () => {
+  const [items, setItems] = useState(data)
+  const [itemsCount, setItemsCount] = useState(0)
   const goBack = () => window.history.back();
 
-  const data = [
-    { id: 1, img: cofeDetails, name: 'Latte(Hot)', countName: 'QTY:', btn1: '2500 RWF', btn2: 'Add to order' },
-    { id: 2, img: cofeDetails, name: 'Latte(Hot)', countName: 'QTY:', btn1: '2500 RWF', btn2: 'Add to order' },
-    { id: 3, img: cofeDetails, name: 'Latte(Hot)', countName: 'QTY:', btn1: '2500 RWF', btn2: 'Add to order' },
-    { id: 4, img: cofeDetails, name: 'Latte(Hot)', countName: 'QTY:', btn1: '2500 RWF', btn2: 'Add to order' },
-    { id: 5, img: cofeDetails, name: 'Latte(Hot)', countName: 'QTY:', btn1: '2500 RWF', btn2: 'Add to order' },
-    { id: 6, img: cofeDetails, name: 'Latte(Hot)', countName: 'QTY:', btn1: '2500 RWF', btn2: 'Add to order' },
-  ]
+  useEffect(() => {
+    setItemsCount(items && items.map(c => c.shoppingCount).reduce((a, b) => a + b))
+  }, [items])
 
   return (
     <div className="details-main-font">
@@ -44,17 +51,15 @@ const Details = () => {
         <Services />
       </div>
       <div className="max-w-[1100px] mx-auto mt-16">
-        <DetailsFilterMenu />
+        <DetailsFilterMenu itemsCount={itemsCount} />
       </div>
       <div className="max-w-[1350px] mx-auto my-16 flex justify-start items-start flex-wrap">
-        {data.map(item => (
+        {items.map(item => (
           <div className="p-7 w-1/3">
             <Cards
-              image={item.img}
-              name={item.name}
-              countName={item.countName}
-              btn1={item.btn1}
-              btn2={item.btn2}
+              key={item.id}
+              item={item}
+              setItems={setItems}
             />
           </div>
         ))}
