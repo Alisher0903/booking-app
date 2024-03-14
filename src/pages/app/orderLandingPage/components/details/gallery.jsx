@@ -10,9 +10,7 @@ const Gallery = ({ imgData }) => {
         setActiveIndex(index);
     };
 
-    const closeModal = () => {
-        setModalImage(null);
-    };
+    const closeModal = () => setModalImage(null);
 
     const nextSlide = () => {
         setActiveIndex((prevIndex) => (prevIndex + 1) % imgData.length);
@@ -42,13 +40,19 @@ const Gallery = ({ imgData }) => {
 
                 {modalImage && (
                     <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-80 z-50">
-                        <button className="absolute top-0 right-0 m-4 text-white text-[2rem]" onClick={closeModal}>
+                        <button
+                            className="absolute top-0 right-0 m-4 text-white text-[2rem]"
+                            onClick={closeModal}>
                             &times;
                         </button>
-                        <button className="absolute top-1/2 left-4 text-white text-[2rem]" onClick={prevSlide}>
+                        <button
+                            className="absolute top-1/2 left-4 text-white text-[2rem]"
+                            onClick={prevSlide}>
                             &lt;
                         </button>
-                        <button className="absolute top-1/2 right-4 text-white text-[2rem]" onClick={nextSlide}>
+                        <button
+                            className="absolute top-1/2 right-4 text-white text-[2rem]"
+                            onClick={nextSlide}>
                             &gt;
                         </button>
                         <img

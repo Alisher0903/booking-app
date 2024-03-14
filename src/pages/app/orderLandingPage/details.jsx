@@ -15,6 +15,7 @@ import DetailsFilterMenu from "./components/details/details-filter-menu";
 import Cards from "./components/details/cards";
 import { useEffect, useState } from "react";
 import Gallery from "./components/details/gallery";
+import Navbar from "./navbar";
 
 const data = [
   { id: 1, img: cofeDetails, shoppingCount: 0, name: 'Latte(Hot)', countName: 'QTY:', btn1: '2500 RWF', btn2: 'Add to order' },
@@ -44,6 +45,7 @@ const Details = () => {
 
   return (
     <div className="details-main-font">
+      <Navbar />
       {/* first section bg img */}
       <div
         className='bg-cover bg-center w-full h-[75vh] rounded-b-2xl'
