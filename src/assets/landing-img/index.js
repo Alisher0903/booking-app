@@ -24,11 +24,16 @@ import cofe5 from './cafe-img/neo-coffee-shop 1.png';
 import cofe6 from './cafe-img/pishon-caffee 1.png';
 import detailsBg from './details-img/bg-main.jfif';
 import cofeDetails from './details-img/card-cofe.jfif';
+import gallery1 from './details-img/gallery1.jfif';
+import gallery2 from './details-img/gallery2.jfif';
+import gallery3 from './details-img/gallery3.jfif';
+import gallery4 from './details-img/gallery4.jfif';
+import gallery5 from './details-img/gallery5.jfif';
 
 export {
     img1, img2, img3, img4, img5, img6, // landing main image
     hotel1, hotel2, hotel3, hotel4, hotel5, hotel6, // hotel page image
     res1, res2, res3, res4, res5, res6, // restuarant page image
     cofe1, cofe2, cofe3, cofe4, cofe5, cofe6, // cofe page image
-    detailsBg, cofeDetails // details page image
+    detailsBg, cofeDetails, gallery1, gallery2, gallery3, gallery4, gallery5, // details page image
 }

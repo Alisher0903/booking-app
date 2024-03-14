@@ -1,5 +1,13 @@
 import { Link } from "react-router-dom"
-import { detailsBg, cofeDetails } from "../../../assets/landing-img"
+import {
+  detailsBg,
+  cofeDetails,
+  gallery1,
+  gallery2,
+  gallery3,
+  gallery4,
+  gallery5
+} from "../../../assets/landing-img"
 import DetailsInfo from "./components/details/details-info"
 import Services from "./components/details/services";
 import './styles.css';
@@ -15,6 +23,14 @@ const data = [
   { id: 4, img: cofeDetails, shoppingCount: 0, name: 'Latte(Hot)', countName: 'QTY:', btn1: '2500 RWF', btn2: 'Add to order' },
   { id: 5, img: cofeDetails, shoppingCount: 0, name: 'Latte(Hot)', countName: 'QTY:', btn1: '2500 RWF', btn2: 'Add to order' },
   { id: 6, img: cofeDetails, shoppingCount: 0, name: 'Latte(Hot)', countName: 'QTY:', btn1: '2500 RWF', btn2: 'Add to order' },
+]
+
+const imgData = [
+  { id: 1, img: gallery1 },
+  { id: 2, img: gallery2 },
+  { id: 3, img: gallery3 },
+  { id: 4, img: gallery4 },
+  { id: 5, img: gallery5 },
 ]
 
 const Details = () => {
@@ -66,7 +82,7 @@ const Details = () => {
         ))}
       </div>
       <div className="max-w-[1350px] mx-auto my-16">
-        <Gallery />
+        <Gallery imgData={imgData} />
       </div>
     </div>
   )
